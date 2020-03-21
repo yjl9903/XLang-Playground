@@ -6,7 +6,8 @@ module.exports = {
   configureWebpack: {
     plugins: [
       new MonacoEditorPlugin({
-        languages: ["javascript", "css", "html", "typescript", "json"]
+        languages: ["json"],
+        features: []
       })
     ]
   }

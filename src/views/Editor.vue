@@ -1,11 +1,23 @@
 <template>
   <div class="editor-container">
-    <monaco-editor class="editor" v-model="code" language="javascript" />
+    <monaco-editor
+      class="editor"
+      v-model="code"
+      language="json"
+      :options="editorOptions"
+    />
   </div>
 </template>
 
 <script>
 import MonacoEditor from "vue-monaco";
+
+const editorOptions = {
+  lineHeight: 22,
+  fontSize: 14,
+  tabSize: 2,
+  contextmenu: false
+};
 
 export default {
   name: "Editor",
@@ -13,7 +25,8 @@ export default {
     MonacoEditor
   },
   data: () => ({
-    code: "const noop = () => {}"
+    code: `{ ok: true }`,
+    editorOptions
   })
 };
 </script>
