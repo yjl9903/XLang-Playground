@@ -1,11 +1,16 @@
 <template>
-  <div id="app">
+  <div id="app" class="full-height">
     <XLangNav></XLangNav>
-    <el-row style="margin-top: 20px;">
+    <el-row v-if="$route.name !== 'Home'" style="margin-top: 20px;">
       <el-col :push="2" :span="20" :xs="{ push: 0, span: 24 }">
         <router-view></router-view>
       </el-col>
     </el-row>
+    <div v-else class="full-height">
+      <transition name="el-fade-in">
+        <router-view></router-view>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -20,24 +25,4 @@ export default {
 };
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap&subset=latin-ext');
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  min-height: 100%;
-  font-size: 16px;
-  font-family: 'Fira Code', Consolas, sans-serif, 'PingFang SC',
-    'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  text-decoration: none;
-  color: #4183c4;
-}
-</style>
+<style></style>

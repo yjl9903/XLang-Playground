@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap&subset=latin-ext');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+  font-size: 16px;
+  font-family: 'Fira Code', Consolas, sans-serif, 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: #4183c4;
+}
+
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-hide {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+::-webkit-selection {
+  background-color: #cce2ff;
+}
+::-moz-selection {
+  background-color: #cce2ff;
+}
+::selection {
+  background-color: #cce2ff;
+}
+input::-webkit-selection,
+textarea::-webkit-selection {
+  background-color: rgba(100, 100, 100, 0.4);
+  color: rgba(0, 0, 0, 0.87);
+}
+input::-moz-selection,
+textarea::-moz-selection {
+  background-color: rgba(100, 100, 100, 0.4);
+  color: rgba(0, 0, 0, 0.87);
+}
+input::selection,
+textarea::selection {
+  background-color: rgba(100, 100, 100, 0.4);
+  color: rgba(0, 0, 0, 0.87);
+}
