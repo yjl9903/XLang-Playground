@@ -6,6 +6,8 @@ import './plugins/element.js';
 
 Vue.config.productionTip = false;
 
+window.addEventListener('resize', () => store.commit('resize'));
+
 new Vue({
   router,
   store,

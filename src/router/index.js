@@ -16,11 +16,6 @@ const routes = [
     component: () => import('../views/Playground.vue')
   },
   {
-    path: '/loading',
-    name: 'Loading',
-    component: () => import('../components/Loading.vue')
-  },
-  {
     path: '/about',
     name: 'About',
     component: () => import('../views/About.vue')

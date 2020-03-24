@@ -24,25 +24,16 @@ export default {
   name: 'XLangNav',
   data() {
     return {
-      activeIndex: '/',
-      width: document.body.clientWidth
+      activeIndex: window.location.pathname
     };
   },
   computed: {
+    width() {
+      return this.$store.state.width;
+    },
     isMobile() {
       return this.width < 430;
     }
-  },
-  methods: {
-    resize() {
-      this.width = document.body.clientWidth;
-    }
-  },
-  created() {
-    window.addEventListener('resize', this.resize);
-  },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.resize);
   }
 };
 </script>

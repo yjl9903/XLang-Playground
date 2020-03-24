@@ -4,8 +4,14 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+    width: document.body.clientWidth
+  },
+  mutations: {
+    resize(state) {
+      state.width = document.body.clientWidth;
+    }
+  },
   actions: {},
   modules: {}
 });
