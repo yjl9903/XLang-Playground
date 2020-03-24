@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import MonacoEditor from "vue-monaco";
+import MonacoEditor from 'vue-monaco';
 
 const editorOptions = {
   lineHeight: 22,
@@ -20,7 +20,7 @@ const editorOptions = {
 };
 
 export default {
-  name: "Editor",
+  name: 'Editor',
   components: {
     MonacoEditor
   },

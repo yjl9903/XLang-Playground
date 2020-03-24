@@ -1,33 +1,39 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/editor">Editor</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <XLangNav></XLangNav>
+    <router-view></router-view>
   </div>
 </template>
 
+<script>
+import XLangNav from './components/Nav.vue';
+
+export default {
+  name: 'app',
+  components: {
+    XLangNav
+  }
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Fira+Code&display=swap&subset=latin-ext');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+  font-size: 16px;
+  font-family: 'Fira Code', Consolas, sans-serif, 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+a {
+  text-decoration: none;
+  color: #4183c4;
 }
 </style>
