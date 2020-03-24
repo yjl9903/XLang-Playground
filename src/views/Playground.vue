@@ -1,18 +1,16 @@
 <template>
   <div class="playground">
-    <div v-if="mounted">
+    <div v-if="mounted" class="editor-container">
       <Editor></Editor>
     </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue';
 import Editor from '@/components/LazyEditor';
 
 export default {
-  name: 'Home',
+  name: 'Playground',
   components: {
     Editor
   },
@@ -24,3 +22,10 @@ export default {
   }
 };
 </script>
+
+<style>
+.editor-container {
+  height: 500px;
+  width: 800px;
+}
+</style>

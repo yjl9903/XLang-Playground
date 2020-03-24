@@ -3,7 +3,7 @@
     :style="{ height, width }"
     v-loading="true"
     element-loading-text="拼命加载中"
-    element-loading-background="rgba(0, 0, 0, 0.8)"
+    element-loading-background="#F2F6FC"
   ></div>
 </template>
 
