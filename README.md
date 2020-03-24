@@ -1,5 +1,7 @@
 # XLang-Playground
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e26ce843-2deb-4937-acec-95a0fc679160/deploy-status)](https://app.netlify.com/sites/xlang/deploys)
+
 ## Project setup
 
 ```bash
