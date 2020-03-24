@@ -3,7 +3,7 @@
     <monaco-editor
       class="editor"
       v-model="code"
-      language="json"
+      language="rust"
       :options="editorOptions"
     />
   </div>
@@ -25,7 +25,7 @@ export default {
     MonacoEditor
   },
   data: () => ({
-    code: `{ ok: true }`,
+    code: `fn main() {\n\t\n}`,
     editorOptions
   })
 };
