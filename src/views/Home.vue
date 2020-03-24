@@ -3,10 +3,33 @@
     <div class="text-center title">
       <p>XLang</p>
       <p style="font-size: 26px;">A Simple Programming Language</p>
-      <p class="btn-group">
+      <p style="font-size: 26px;">
+        Powered by
+        <a
+          style="color: #4f5959"
+          href="https://github.com/yjl9903/XLex"
+          target="_blank"
+          rel="noopener"
+          >XLex</a
+        >
+        and
+        <a
+          style="color: #4f5959"
+          href="https://github.com/yjl9903/XParse"
+          target="_blank"
+          rel="noopener"
+          >XParse</a
+        >
+      </p>
+      <p>
         <router-link class="button white" to="/playground">体验</router-link>
-        <router-link style="margin-left: 0.5em;" class="button white" to="/docs"
-          >文档</router-link
+        <a
+          style="margin-left: 0.5em;"
+          class="button white"
+          href="https://xlang-docs.netlify.com"
+          target="_blank"
+          rel="noopener"
+          >文档</a
         >
         <a
           style="margin-left: 0.5em;"
