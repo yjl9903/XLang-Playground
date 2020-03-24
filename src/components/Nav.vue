@@ -20,12 +20,25 @@
 </template>
 
 <script>
+function getBasePath(url) {
+  if (url === '' || url === '/') {
+    return '/';
+  }
+  const reg = /^\/(\w+)/;
+  return '/' + reg.exec(url)[1];
+}
+
 export default {
   name: 'XLangNav',
   data() {
     return {
-      activeIndex: window.location.pathname
+      activeIndex: getBasePath(window.location.pathname)
     };
+  },
+  watch: {
+    $route(nRoute) {
+      this.activeIndex = getBasePath(nRoute.path);
+    }
   },
   computed: {
     width() {
