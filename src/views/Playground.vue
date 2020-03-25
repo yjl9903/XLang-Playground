@@ -112,8 +112,4 @@ export default {
 };
 </script>
 
-<style>
-.el-tabs__header.is-top {
-  margin-bottom: 0 !important;
-}
-</style>
+<style></style>

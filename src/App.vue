@@ -25,4 +25,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.el-tabs__header.is-top {
+  margin-bottom: 0 !important;
+}
+</style>
