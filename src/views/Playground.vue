@@ -93,7 +93,15 @@ export default {
         this.$store.commit('addCode');
         this.activeName = this.codes[this.codes.length - 1].name;
       } else if (action === 'remove') {
-        this.$store.commit('delCode', tagName);
+        if (this.codes.length === 1) {
+          return;
+        }
+        if (this.activeName === tagName) {
+          this.$store.commit('delCode', tagName);
+          this.activeName = this.codes[0].name;
+        } else {
+          this.$store.commit('delCode', tagName);
+        }
       }
     }
   },
