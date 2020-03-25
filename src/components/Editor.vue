@@ -15,6 +15,9 @@ import MonacoEditor from 'vue-monaco';
 const editorOptions = {
   lineHeight: 22,
   fontSize: 14,
+  fontFamily: `'Fira Code', Consolas, sans-serif, 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial`,
+  fontLigatures: true,
   tabSize: 2,
   contextmenu: false
 };
