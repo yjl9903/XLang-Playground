@@ -2,7 +2,7 @@
   <div class="editor-container">
     <monaco-editor
       class="editor"
-      v-model="code"
+      v-model="content"
       language="rust"
       :options="editorOptions"
     />
@@ -21,13 +21,34 @@ const editorOptions = {
 
 export default {
   name: 'Editor',
+  props: {
+    code: String
+  },
+  model: {
+    prop: 'code',
+    event: 'change'
+  },
   components: {
     MonacoEditor
   },
-  data: () => ({
-    code: `fn main() {\n\t\n}`,
-    editorOptions
-  })
+  data() {
+    return {
+      editorOptions,
+      content: this.code
+    };
+  },
+  watch: {
+    code(nV, oV) {
+      if (nV !== oV) {
+        this.content = nV;
+      }
+    },
+    content(nV, oV) {
+      if (nV !== oV) {
+        this.$emit('change', nV);
+      }
+    }
+  }
 };
 </script>
 
@@ -39,8 +60,9 @@ export default {
 }
 
 .editor {
-  width: 800px;
-  height: 500px;
+  width: 100%;
+  height: 525px;
   border: 1px solid rgb(238, 238, 238);
+  border-top: none;
 }
 </style>
