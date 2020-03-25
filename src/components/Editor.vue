@@ -5,6 +5,7 @@
       v-model="content"
       language="rust"
       :options="editorOptions"
+      @editorDidMount="editorDidMount"
     />
   </div>
 </template>
@@ -37,6 +38,7 @@ export default {
   data() {
     return {
       editorOptions,
+      editor: null,
       content: this.code
     };
   },
@@ -49,6 +51,16 @@ export default {
     content(nV, oV) {
       if (nV !== oV) {
         this.$emit('change', nV);
+      }
+    }
+  },
+  methods: {
+    editorDidMount(editor) {
+      this.editor = editor;
+    },
+    scrollTop() {
+      if (this.editor) {
+        this.editor.setScrollTop(0);
       }
     }
   }

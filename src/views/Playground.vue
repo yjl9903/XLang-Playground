@@ -30,7 +30,7 @@
     </el-row>
     <el-row v-if="mounted" :gutter="10">
       <el-col :span="16" style="height: 525px;">
-        <Editor v-model="code"></Editor>
+        <Editor ref="editor" v-model="code"></Editor>
       </el-col>
       <el-col :span="8">
         <el-collapse v-model="activeNames">
@@ -79,6 +79,7 @@ export default {
         const id = this.$store.getters.getCodeId(nV);
         this.code = this.$store.getters.getCode(id);
         this.activeId = id;
+        this.$refs.editor.scrollTop();
       }
     }
   },
