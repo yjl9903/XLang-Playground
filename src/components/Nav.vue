@@ -14,8 +14,8 @@
     <el-col :span="2" :xs="0"></el-col>
     <el-menu-item index="/" class="nav-logo no-select">XLang</el-menu-item>
     <el-menu-item index="/playground">游乐场</el-menu-item>
-    <el-menu-item index="/lex">词法</el-menu-item>
-    <el-menu-item index="/syntax">语法</el-menu-item>
+    <el-menu-item index="/lex">词法分析</el-menu-item>
+    <el-menu-item index="/syntax">语法分析</el-menu-item>
   </el-menu>
 </template>
 
