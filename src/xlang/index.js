@@ -22,6 +22,7 @@ export function run(text, args = [], input = []) {
         text: '编译成功, 开始运行...',
         color: '#67C23A'
       });
+      store.commit('consolePrintln', { text: '' });
       try {
         runtime.run(out, args, input);
         const ed = new Date();
