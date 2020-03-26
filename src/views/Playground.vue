@@ -45,7 +45,7 @@
             />
           </el-collapse-item>
           <el-collapse-item title="运行参数" name="1">
-            <PlaygroundParams />
+            <PlaygroundParams ref="params" />
           </el-collapse-item>
           <el-collapse-item title="标准输入" name="2">
             <PlaygroundIn />
@@ -81,7 +81,7 @@ export default {
       code: this.$store.state.playground.codes[0].content,
       activeId: 0,
       activeName: this.$store.state.playground.codes[0].name,
-      activeNames: ['1', '2']
+      activeNames: ['1']
     };
   },
   watch: {
@@ -106,8 +106,12 @@ export default {
   },
   methods: {
     run() {
-      this.activeNames = [];
-      run(this.code);
+      if (this.activeNames.includes('1')) {
+        this.activeNames = ['1'];
+      } else {
+        this.activeNames = [];
+      }
+      run(this.code, this.$refs.params.params);
     },
     handleTabsEdit(tagName, action) {
       if (action === 'add') {
