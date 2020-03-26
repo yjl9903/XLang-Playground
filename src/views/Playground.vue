@@ -104,6 +104,7 @@ export default {
   },
   methods: {
     run() {
+      this.activeNames = [];
       run(this.code);
     },
     handleTabsEdit(tagName, action) {
@@ -137,4 +138,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.playground {
+  padding-bottom: 24px;
+}
+</style>
