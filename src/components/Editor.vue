@@ -76,7 +76,7 @@ export default {
 
 .editor {
   width: 100%;
-  height: 525px;
+  min-height: 525px;
   border: 1px solid rgb(238, 238, 238);
   border-top: none;
 }

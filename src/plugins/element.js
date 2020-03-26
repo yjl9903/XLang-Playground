@@ -2,6 +2,10 @@ import Vue from 'vue';
 import 'element-ui/lib/theme-chalk/base.css';
 import {
   Button,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
+  Input,
   Menu,
   MenuItem,
   Row,
@@ -14,6 +18,10 @@ import {
 } from 'element-ui';
 
 Vue.use(Button);
+Vue.use(Dropdown);
+Vue.use(DropdownMenu);
+Vue.use(DropdownItem);
+Vue.use(Input);
 Vue.use(Menu);
 Vue.use(MenuItem);
 Vue.use(Row);

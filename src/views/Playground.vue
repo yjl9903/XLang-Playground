@@ -18,31 +18,34 @@
       </el-col>
       <el-col :span="8">
         <el-row type="flex" justify="space-between" align="middle">
-          <el-col style="height: 100%">运行</el-col>
+          <el-col style="height: 100%">终端</el-col>
           <el-button
             type="success"
             icon="el-icon-caret-right"
-            style="padding: 8px; font-size: 22px;"
+            style="padding: 7px; font-size: 22px;"
             circle
           ></el-button>
         </el-row>
       </el-col>
     </el-row>
     <el-row v-if="mounted" :gutter="10">
-      <el-col :span="16" style="height: 525px;">
+      <el-col :span="16" style="min-height: 525px; height: 525px;">
         <Editor ref="editor" v-model="code"></Editor>
       </el-col>
       <el-col :span="8">
         <el-collapse v-model="activeNames">
+          <el-collapse-item title="文件" name="0">
+            <PlaygroundFile
+              :fileName="activeName"
+              @addExample="handleAddExample"
+              @rename="handleRename"
+            />
+          </el-collapse-item>
           <el-collapse-item title="运行参数" name="1">
-            <div>
-              设置运行参数
-            </div>
+            <PlaygroundParams />
           </el-collapse-item>
           <el-collapse-item title="标准输入" name="2">
-            <div>
-              标准输入流
-            </div>
+            <PlaygroundIn />
           </el-collapse-item>
         </el-collapse>
       </el-col>
@@ -51,13 +54,19 @@
 </template>
 
 <script>
-import Editor from '@/components/LazyEditor';
 import { mapState } from 'vuex';
+import Editor from '@/components/LazyEditor';
+import PlaygroundFile from '@/components/Playground/File.vue';
+import PlaygroundParams from '@/components/Playground/Params.vue';
+import PlaygroundIn from '@/components/Playground/In.vue';
 
 export default {
   name: 'Playground',
   components: {
-    Editor
+    Editor,
+    PlaygroundFile,
+    PlaygroundParams,
+    PlaygroundIn
   },
   data() {
     return {
@@ -65,7 +74,7 @@ export default {
       code: this.$store.state.playground.codes[0].content,
       activeId: 0,
       activeName: this.$store.state.playground.codes[0].name,
-      activeNames: ['1']
+      activeNames: ['1', '2']
     };
   },
   watch: {
@@ -104,6 +113,14 @@ export default {
           this.$store.commit('delCode', tagName);
         }
       }
+    },
+    handleAddExample(item) {
+      this.$store.commit('addCode', item);
+      this.activeName = this.codes[this.codes.length - 1].name;
+    },
+    handleRename(name) {
+      this.$store.commit('setCode', { id: this.activeId, name });
+      this.activeName = name;
     }
   },
   mounted() {
