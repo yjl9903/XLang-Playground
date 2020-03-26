@@ -1,5 +1,5 @@
 <template>
-  <div class="playground">
+  <div class="playground" style="padding-bottom: 24px;">
     <el-row :gutter="10">
       <el-col :span="16">
         <el-tabs
@@ -56,7 +56,7 @@
             <PlaygroundParams ref="params" />
           </el-collapse-item>
           <el-collapse-item title="标准输入" name="2">
-            <PlaygroundIn />
+            <PlaygroundIn ref="in" />
           </el-collapse-item>
         </el-collapse>
         <PlaygroundConsole style="margin-top: 10px" />
@@ -132,7 +132,16 @@ export default {
       } else {
         this.activeNames = [];
       }
-      run(this.code, this.$refs.params.params);
+      const input = this.$refs.in.value
+        .split('\n')
+        .map(row =>
+          row
+            .trim()
+            .split(' ')
+            .filter(s => s.length > 0)
+        )
+        .reduce((pre, cur) => (pre.push(...cur), pre), []);
+      run(this.code, this.$refs.params.params, input);
     },
     handleTabsEdit(tagName, action) {
       if (action === 'add') {
@@ -164,9 +173,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.playground {
-  padding-bottom: 24px;
-}
-</style>
