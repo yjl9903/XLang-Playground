@@ -31,7 +31,7 @@ export function run(text, args = [], input = []) {
         });
       } catch (err) {
         store.commit('consolePrintln', {
-          text: '运行时错误',
+          text: '运行时错误:',
           color: '#F56C6C'
         });
         store.commit('consolePrintln', { text: err.message, color: '#F56C6C' });

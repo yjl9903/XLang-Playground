@@ -18,7 +18,15 @@
       </el-col>
       <el-col :span="8">
         <el-row type="flex" justify="space-between" align="middle">
-          <el-col style="height: 100%">终端</el-col>
+          <el-col style="height: 100%">面板</el-col>
+          <el-tooltip content="展开终端" placement="top">
+            <el-button
+              icon="el-icon-caret-top"
+              style="padding: 7px; font-size: 22px;"
+              circle
+              @click="drawer = true"
+            ></el-button>
+          </el-tooltip>
           <el-tooltip content="运行" placement="top">
             <el-button
               type="success"
@@ -54,6 +62,18 @@
         <PlaygroundConsole style="margin-top: 10px" />
       </el-col>
     </el-row>
+    <el-drawer
+      style="outline: none;"
+      :visible.sync="drawer"
+      :with-header="false"
+      :modal="false"
+      size="400px;"
+      direction="btt"
+    >
+      <PlaygroundConsole
+        style="border: none; box-shadow: none; max-height: 400px; overflow-y: auto;"
+      />
+    </el-drawer>
   </div>
 </template>
 
@@ -77,6 +97,7 @@ export default {
   },
   data() {
     return {
+      drawer: false,
       mounted: false,
       code: this.$store.state.playground.codes[0].content,
       activeId: 0,

@@ -5,8 +5,8 @@
         v-for="(col, cIndex) in row"
         :key="cIndex"
         :style="{ color: col.color }"
-        >{{ col.text }}</span
-      >
+        v-html="col.text"
+      ></span>
     </div>
   </el-card>
 </template>
@@ -23,4 +23,18 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.box-card {
+  overflow-x: auto;
+}
+
+.box-card::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.4rem;
+}
+
+.box-card::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.26);
+}
+</style>

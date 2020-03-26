@@ -1,5 +1,22 @@
 const CodeTemplate = 'fn main() {\n\t\n}';
 
+function htmlEscape(text) {
+  return text.replace(/[<>"& ]/g, match => {
+    switch (match) {
+      case '<':
+        return '&lt;';
+      case '>':
+        return '&gt;';
+      case '"':
+        return '&quot;';
+      case '&':
+        return '&amp;';
+      case ' ':
+        return '&nbsp;';
+    }
+  });
+}
+
 const state = {
   codes: [
     {
@@ -53,12 +70,15 @@ const mutations = {
     }
   },
   consolePrintln(state, text) {
+    text.text = htmlEscape(text.text);
+    // console.log(text.text);
     state.console.push([text]);
   },
   consolePrint(state, text) {
     if (state.console.length === 0) {
       state.console = [[]];
     }
+    text.text = htmlEscape(text.text);
     state.console[state.console.length - 1].push(text);
   },
   consoleClear(state) {
