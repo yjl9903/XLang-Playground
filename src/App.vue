@@ -13,6 +13,9 @@
         <router-view></router-view>
       </transition>
     </div>
+    <el-backtop>
+      <i class="el-icon-caret-top" style="font-size: 24px"></i>
+    </el-backtop>
   </div>
 </template>
 

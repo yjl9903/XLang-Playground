@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import 'element-ui/lib/theme-chalk/base.css';
 import {
+  Backtop,
   Button,
   Dropdown,
   DropdownMenu,
@@ -19,6 +20,7 @@ import {
   Loading
 } from 'element-ui';
 
+Vue.use(Backtop);
 Vue.use(Button);
 Vue.use(Dropdown);
 Vue.use(DropdownMenu);
