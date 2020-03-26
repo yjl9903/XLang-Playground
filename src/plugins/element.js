@@ -10,6 +10,7 @@ import {
   MenuItem,
   Row,
   Col,
+  Card,
   Tabs,
   Collapse,
   CollapseItem,
@@ -26,6 +27,7 @@ Vue.use(Menu);
 Vue.use(MenuItem);
 Vue.use(Row);
 Vue.use(Col);
+Vue.use(Card);
 Vue.use(Tabs);
 Vue.use(TabPane);
 Vue.use(Collapse);

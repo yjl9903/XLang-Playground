@@ -6,7 +6,8 @@ const state = {
       name: '新的代码',
       content: CodeTemplate
     }
-  ]
+  ],
+  console: []
 };
 
 const getters = {
@@ -50,6 +51,18 @@ const mutations = {
     if (id !== -1) {
       codes.splice(id, 1);
     }
+  },
+  consolePrintln(state, text) {
+    state.console.push([text]);
+  },
+  consolePrint(state, text) {
+    if (state.console.length === 0) {
+      state.console = [[]];
+    }
+    state.console[state.console.length - 1].push(text);
+  },
+  consoleClear(state) {
+    state.console = [];
   }
 };
 

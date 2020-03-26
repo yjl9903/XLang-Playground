@@ -24,6 +24,7 @@
             icon="el-icon-caret-right"
             style="padding: 7px; font-size: 22px;"
             circle
+            @click="run"
           ></el-button>
         </el-row>
       </el-col>
@@ -48,6 +49,7 @@
             <PlaygroundIn />
           </el-collapse-item>
         </el-collapse>
+        <PlaygroundConsole style="margin-top: 10px" />
       </el-col>
     </el-row>
   </div>
@@ -59,6 +61,8 @@ import Editor from '@/components/LazyEditor';
 import PlaygroundFile from '@/components/Playground/File.vue';
 import PlaygroundParams from '@/components/Playground/Params.vue';
 import PlaygroundIn from '@/components/Playground/In.vue';
+import PlaygroundConsole from '@/components/Playground/Console.vue';
+import { run } from '../xlang';
 
 export default {
   name: 'Playground',
@@ -66,7 +70,8 @@ export default {
     Editor,
     PlaygroundFile,
     PlaygroundParams,
-    PlaygroundIn
+    PlaygroundIn,
+    PlaygroundConsole
   },
   data() {
     return {
@@ -98,6 +103,9 @@ export default {
     })
   },
   methods: {
+    run() {
+      run(this.code);
+    },
     handleTabsEdit(tagName, action) {
       if (action === 'add') {
         this.$store.commit('addCode');

@@ -1,11 +1,11 @@
 const Examples = [
   {
     name: 'HelloWorld',
-    content: `fn main() {\n\tprint("Hello World!");\n}`
+    content: `fn main() {\n\tprintln("Hello World!");\n}`
   },
   {
     name: 'A + B',
-    content: `fn main(a: number, b: number) {\n\tprint(Number::to_string(a + b));\n}`
+    content: `fn main(a: number, b: number) {\n\tprintln(Number::to_string(a + b));\n}`
   },
   {
     name: '等差数列求和',
@@ -18,7 +18,7 @@ const Examples = [
 }
 
 fn main(a: number) {
-  print(cal(a) + "");
+  println(cal(a) + "");
 }`
   },
   {
@@ -32,7 +32,7 @@ fn main(a: number) {
 }
 
 fn main(a: number) {
-  print(fib(a) + "");
+  println(fib(a) + "");
 }`
   },
   {
@@ -41,11 +41,11 @@ fn main(a: number) {
   let i = 0;
   if (a >= 0) {
     while (i <= a) {
-      print("" + i);
+      println("" + i);
       i = i + 1;
     }
   } else {
-    print("a should not be negative");
+    println("a should not be negative");
   }
 }`
   },
@@ -53,22 +53,22 @@ fn main(a: number) {
     name: '绩点计算',
     content: `fn main(score: number) {
   if (score > 100 || score < 0) {
-    print("Your score \\"" + score + "\\" is illegal!");
+    println("Your score \\"" + score + "\\" is illegal!");
     return ;
   }
   if (score >= 90) {
-    print("Excellent!");
+    println("Excellent!");
   } else if (score >= 80) {
-    print("Good!");
+    println("Good!");
   } else if (score >= 70) {
-    print("Common");
+    println("Common");
   } else if (score >= 60) {
-    print("Pass");
+    println("Pass");
   } else {
-    print("emmmmmmm");
+    println("emmmmmmm");
   }
   if (score < 60 && score == 0) {
-    print("0!");
+    println("0!");
   }
 }`
   },
@@ -76,10 +76,10 @@ fn main(a: number) {
     name: '斐波那契数列 - 循环',
     content: `fn main(a: number) {
   if (a < 0) {
-    print("emmmm");
+    println("emmmm");
     return ;
   } else if (a <= 1) {
-    print("1");
+    println("1");
     return ;
   }
   Array::new("fib");
@@ -89,7 +89,7 @@ fn main(a: number) {
   for (let i = 2; i <= a; i = i + 1) {
     Array::set("fib", i, Array::get("fib", i - 1) + Array::get("fib", i - 2));
   }
-  print(Number::to_string(Array::get("fib", a)));
+  println(Number::to_string(Array::get("fib", a)));
 }`
   },
   {
@@ -98,7 +98,7 @@ fn main(a: number) {
   const n = In::nextNumber();
   for (let i = 1; i <= n; i = i + 1) {
     const a = In::nextNumber();
-    print(Number::to_string(a));
+    println(Number::to_string(a));
   }
 }`
   },
@@ -137,7 +137,7 @@ fn main(a: number) {
         row = row + " ";
       }
     }
-    print(row);
+    println(row);
   }
 }`
   },
@@ -174,7 +174,7 @@ fn main() {
     Array::push("edge_" + v, u);
   }
   dfs(1, 0);
-  print(Number::to_string(Number::max(Array::get("dp0", 1), Array::get("dp1", 1))));
+  println(Number::to_string(Number::max(Array::get("dp0", 1), Array::get("dp1", 1))));
 }`
   }
 ];
