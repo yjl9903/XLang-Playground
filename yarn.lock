@@ -1315,23 +1315,23 @@
   dependencies:
     random-js "^2.1.0"
 
-"@yjl9903/xlang@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@yjl9903/xlang/-/xlang-1.0.0.tgz#9a161b81fac026032676934de279954e4c849337"
-  integrity sha512-f4k9WZd9TRhqS7z3TLaGrIgtGBwq/g27DFuu6Kpm1aY9sX7r69jTLUnumK9SqBGocsM01z9ycSPKWVcEPzqTQg==
+"@yjl9903/xlang@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@yjl9903/xlang/-/xlang-1.0.1.tgz#9fc63e64a825436cdb4dbdb510f67d0e54458169"
+  integrity sha512-Xb96vOzrPUKHiVerv7oqvbAiaAyYm0/gc+zzaE5fFPDQpKxhnGgU2Rd2n2JvdAzTA0hRSopVQEWDMJ/uolhq9A==
   dependencies:
-    "@yjl9903/xparse" "^1.0.10"
+    "@yjl9903/xparse" "^1.1.0"
     cac "^6.5.7"
-    xlex "^1.3.3"
+    xlex "^1.4.0"
 
-"@yjl9903/xparse@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@yjl9903/xparse/-/xparse-1.0.10.tgz#8e57dc3e639148a88746cb1385ce80edd8317107"
-  integrity sha512-BeIzrUubQw0INRUyDhPAQ0kgIccVvoNcKVnUbFtNF0fxyJZzov59rwfXTMFGvBPUZ10t6Y+SKnLNK6lVkzTK5A==
+"@yjl9903/xparse@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@yjl9903/xparse/-/xparse-1.1.0.tgz#85af9f101964ee6b7dde736b26f99321cce651ce"
+  integrity sha512-FD652RdRjutIrSWUglgJo/oRBlBVbL629p8puCBNY+VL6ektEwLxaJh41DXuKytfecEEG0tqjELlGtMf2WVTyw==
   dependencies:
     "@yjl9903/setmap" "^1.0.5"
     cac "^6.5.6"
-    xlex "^1.3.3"
+    xlex "^1.4.0"
 
 accepts@~1.3.4, accepts@~1.3.5, accepts@~1.3.7:
   version "1.3.7"
@@ -8696,15 +8696,6 @@ ws@^6.0.0, ws@^6.2.1:
   integrity sha1-RC/fCkftZPWbal2P8TD0dI7VJPs=
   dependencies:
     async-limiter "~1.0.0"
-
-xlex@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/xlex/-/xlex-1.3.3.tgz#8f00ff7d16825a39c663c7c3b824ec99d4eed391"
-  integrity sha512-s0/T0zkjsuCfwi280dlLg368wcamS33+31MbyZw7b+Bs1OLQU7zFX5EOk55hZJguXJ/mSkmsYW0U5NlLIQ7odA==
-  dependencies:
-    cac "^6.5.6"
-    graphviz "^0.0.9"
-    random-js "^2.1.0"
 
 xlex@^1.4.0:
   version "1.4.0"
