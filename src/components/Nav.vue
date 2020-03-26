@@ -67,7 +67,8 @@ export default {
   color: white;
 }
 
-#nav.nav-hero .nav-logo:hover {
+#nav.nav-hero .nav-logo:hover,
+#nav.nav-hero .nav-logo:focus {
   color: #303133;
 }
 
