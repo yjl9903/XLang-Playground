@@ -24,6 +24,21 @@
           >
         </el-dropdown-menu>
       </el-dropdown>
+      <el-button
+        type="primary"
+        size="small"
+        style="margin-left: 5px;"
+        @click="handleClickInput"
+        >导入文件</el-button
+      >
+      <input
+        style="display: none"
+        ref="input"
+        type="file"
+        name="file"
+        accept=".xl,.txt"
+        @change="handleChange"
+      />
     </el-row>
   </div>
 </template>
@@ -45,6 +60,25 @@ export default {
   watch: {
     fileName(nV) {
       this.input = nV;
+    }
+  },
+  methods: {
+    handleClickInput() {
+      this.$refs.input.dispatchEvent(new MouseEvent('click'));
+    },
+    handleChange() {
+      const inputFile = this.$refs.input.files[0];
+      if (inputFile !== undefined) {
+        const name = inputFile.name.replace('.xl', '').replace('.txt', '');
+        const reader = new FileReader();
+        reader.readAsText(inputFile, 'utf-8');
+        reader.addEventListener('load', e => {
+          this.$emit('addExample', {
+            name,
+            content: e.target.result
+          });
+        });
+      }
     }
   }
 };
