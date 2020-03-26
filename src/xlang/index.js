@@ -24,8 +24,17 @@ export function run(text, args = [], input = []) {
       });
       try {
         runtime.run(out, args, input);
+        const ed = new Date();
+        store.commit('consolePrintln', {
+          text: `运行完成, 时间: ${ed - st}ms.`,
+          color: '#67C23A'
+        });
       } catch (err) {
-        store.commit('consolePrintln', { text });
+        store.commit('consolePrintln', {
+          text: '运行时错误',
+          color: '#F56C6C'
+        });
+        store.commit('consolePrintln', { text: err.message, color: '#F56C6C' });
       }
     } else {
       if (out.message) {
@@ -81,9 +90,4 @@ export function run(text, args = [], input = []) {
     store.commit('consolePrintln', { text: `编译失败:`, color: '#F56C6C' });
     store.commit('consolePrintln', { text: err.message, color: '#F56C6C' });
   }
-  const ed = new Date();
-  store.commit('consolePrintln', {
-    text: `运行完成, 时间: ${ed - st}ms.`,
-    color: '#67C23A'
-  });
 }

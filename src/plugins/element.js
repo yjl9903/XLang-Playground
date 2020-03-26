@@ -15,6 +15,7 @@ import {
   Collapse,
   CollapseItem,
   TabPane,
+  Tooltip,
   Loading
 } from 'element-ui';
 
@@ -30,6 +31,7 @@ Vue.use(Col);
 Vue.use(Card);
 Vue.use(Tabs);
 Vue.use(TabPane);
+Vue.use(Tooltip);
 Vue.use(Collapse);
 Vue.use(CollapseItem);
 

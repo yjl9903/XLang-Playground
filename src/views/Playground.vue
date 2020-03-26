@@ -19,13 +19,15 @@
       <el-col :span="8">
         <el-row type="flex" justify="space-between" align="middle">
           <el-col style="height: 100%">终端</el-col>
-          <el-button
-            type="success"
-            icon="el-icon-caret-right"
-            style="padding: 7px; font-size: 22px;"
-            circle
-            @click="run"
-          ></el-button>
+          <el-tooltip content="运行" placement="top">
+            <el-button
+              type="success"
+              icon="el-icon-caret-right"
+              style="padding: 7px; font-size: 22px;"
+              circle
+              @click="run"
+            ></el-button>
+          </el-tooltip>
         </el-row>
       </el-col>
     </el-row>

@@ -79,5 +79,7 @@ export default {
   min-height: 525px;
   border: 1px solid rgb(238, 238, 238);
   border-top: none;
+  tab-size: 2 !important;
+  -moz-tab-size: 2 !important;
 }
 </style>
