@@ -16,7 +16,17 @@
       </el-tooltip>
     </p>
     <el-card style="margin-top: 10px; max-height: 475px; overflow-x: auto;">
+      <div v-if="message.length > 0">
+        <div
+          v-for="(msg, index) in message"
+          :key="index"
+          style="color: #F56C6C"
+        >
+          {{ msg }}
+        </div>
+      </div>
       <div
+        v-else
         v-for="token in tokens"
         :key="token.position.row + ',' + token.position.col"
       >
@@ -35,7 +45,8 @@
 export default {
   name: 'Lex-TokenStream',
   props: {
-    tokens: Array
+    tokens: Array,
+    message: Array
   },
   data: () => ({})
 };

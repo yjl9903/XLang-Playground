@@ -13,7 +13,7 @@
         ></Editor>
       </el-col>
       <el-col :span="6">
-        <LexStream @run="run" :tokens="tokens" />
+        <LexStream @run="run" :tokens="tokens" :message="errMsg" />
       </el-col>
       <el-col :span="6">
         <LexConfig ref="config" />
@@ -38,12 +38,35 @@ export default {
   data: () => ({
     mounted: false,
     code: '',
-    tokens: []
+    tokens: [],
+    errMsg: []
   }),
   methods: {
     run() {
-      const lexer = this.$refs.config.getLexer();
-      this.tokens = lexer.run(this.code);
+      try {
+        const lexer = this.$refs.config.getLexer();
+        try {
+          this.errMsg = [];
+          this.tokens = lexer.run(this.code);
+        } catch (err) {
+          this.handleError('词法分析失败:', err.message);
+        }
+      } catch (err) {
+        this.handleError('词法分析器构建失败:', err.message);
+      }
+    },
+    handleError(...msg) {
+      this.errMsg = msg.map(s => {
+        const res = /^XLex Error: ([\w\W]+), at Row (\d+) Col (\d+).$/.exec(s);
+        if (res !== undefined && res !== null) {
+          const [, message, row, col] = res;
+          return `${message}, 位于第 ${parseInt(row) + 1} 行, 第 ${parseInt(
+            col
+          ) + 1} 列.`;
+        } else {
+          return s;
+        }
+      });
     }
   },
   mounted() {
@@ -53,8 +76,13 @@ export default {
     const code = to.params.code;
     if (code !== undefined) {
       next(vm => {
+        vm.errMsg = [];
         vm.code = code;
-        vm.tokens = XLangLexer.run(code);
+        try {
+          vm.tokens = XLangLexer.run(code);
+        } catch (err) {
+          vm.handleError('词法分析失败:', err.message);
+        }
       });
     } else {
       next();
