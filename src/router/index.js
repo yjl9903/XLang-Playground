@@ -16,6 +16,16 @@ const routes = [
     component: () => import('../views/Playground.vue')
   },
   {
+    path: '/lex',
+    name: 'Lex',
+    component: () => import('../views/Lex.vue')
+  },
+  {
+    path: '/syntax',
+    name: 'Syntax',
+    component: () => import('../views/Syntax.vue')
+  },
+  {
     path: '/about',
     name: 'About',
     component: () => import('../views/About.vue')
