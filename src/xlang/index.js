@@ -4,20 +4,18 @@ import store from '../store';
 let runtime = undefined;
 
 function initRuntime() {
-  return new Promise(res => {
-    if (runtime !== undefined) {
+  if (runtime === undefined) {
+    return new Promise(res => {
+      runtime = new XLang();
+      runtime.addFn('println', 'voidType', ['stringType'], text => {
+        store.commit('consolePrintln', { text });
+      });
+      runtime.addFn('print', 'voidType', ['stringType'], text => {
+        store.commit('consolePrint', { text });
+      });
       res();
-      return;
-    }
-    runtime = new XLang();
-    runtime.addFn('println', 'voidType', ['stringType'], text => {
-      store.commit('consolePrintln', { text });
     });
-    runtime.addFn('print', 'voidType', ['stringType'], text => {
-      store.commit('consolePrint', { text });
-    });
-    res();
-  });
+  }
 }
 
 export async function run(text, args = [], input = []) {
