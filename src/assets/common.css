@@ -22,6 +22,21 @@ a {
   overflow-x: auto;
 }
 
+.el-input.el-input--small>input {
+  padding-left: 0.5em !important;
+}
+
+.stream .el-card__body {
+  box-sizing: border-box;
+  max-height: 475px;
+  overflow: auto;
+}
+
+.stream .el-button {
+  font-family: 'Fira Code', Consolas, sans-serif, 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial;
+}
+
 .no-select {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -51,6 +66,10 @@ a {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
 }
 
 .align-center {

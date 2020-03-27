@@ -1,5 +1,7 @@
-import { XLang } from '@yjl9903/xlang';
+import { XLang, LexConfig, XLangLexer } from '@yjl9903/xlang';
 import store from '../store';
+
+export { LexConfig, XLangLexer };
 
 let runtime = undefined;
 

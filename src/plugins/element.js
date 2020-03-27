@@ -18,7 +18,8 @@ import {
   CollapseItem,
   TabPane,
   Tooltip,
-  Loading
+  Loading,
+  Popover
 } from 'element-ui';
 
 Vue.use(Backtop);
@@ -38,5 +39,6 @@ Vue.use(TabPane);
 Vue.use(Tooltip);
 Vue.use(Collapse);
 Vue.use(CollapseItem);
+Vue.use(Popover);
 
 Vue.use(Loading.directive);

@@ -3,7 +3,9 @@
     <XLangNav></XLangNav>
     <el-row v-if="$route.name !== 'Home'" style="margin-top: 20px;">
       <el-col :push="2" :span="20" :xs="{ push: 0, span: 24 }">
-        <router-view></router-view>
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
       </el-col>
     </el-row>
     <div v-else class="full-height">
