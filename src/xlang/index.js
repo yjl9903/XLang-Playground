@@ -1,17 +1,27 @@
 import { XLang } from '@yjl9903/xlang';
 import store from '../store';
 
-const runtime = new XLang();
+let runtime = undefined;
 
-runtime.addFn('println', 'voidType', ['stringType'], text => {
-  store.commit('consolePrintln', { text });
-});
+function initRuntime() {
+  return new Promise(res => {
+    if (runtime !== undefined) {
+      res();
+      return;
+    }
+    runtime = new XLang();
+    runtime.addFn('println', 'voidType', ['stringType'], text => {
+      store.commit('consolePrintln', { text });
+    });
+    runtime.addFn('print', 'voidType', ['stringType'], text => {
+      store.commit('consolePrint', { text });
+    });
+    res();
+  });
+}
 
-runtime.addFn('print', 'voidType', ['stringType'], text => {
-  store.commit('consolePrint', { text });
-});
-
-export function run(text, args = [], input = []) {
+export async function run(text, args = [], input = []) {
+  await initRuntime();
   store.commit('consoleClear');
   store.commit('consolePrintln', { text: '开始编译...', color: '#67C23A' });
   const st = new Date();
