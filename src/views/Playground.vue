@@ -9,8 +9,8 @@
           @edit="handleTabsEdit"
         >
           <el-tab-pane
-            :key="index"
-            v-for="(item, index) in codes"
+            v-for="item in codes"
+            :key="item.name"
             :label="item.name"
             :name="item.name"
           ></el-tab-pane>
