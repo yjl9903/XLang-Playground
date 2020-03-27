@@ -26,7 +26,7 @@ a {
   padding-left: 0.5em !important;
 }
 
-.stream .el-card__body {
+.stream .el-card__body, .box-card .el-card__body {
   box-sizing: border-box;
   max-height: 475px;
   overflow: auto;
