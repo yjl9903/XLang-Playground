@@ -15,7 +15,7 @@
         ></el-button>
       </el-tooltip>
     </p>
-    <div style="max-height: 475px; padding: 0px 5px; overflow-x: auto;">
+    <div style="max-height: 485px; padding: 0px 5px; overflow-x: auto;">
       <el-row
         type="flex"
         align="middle"

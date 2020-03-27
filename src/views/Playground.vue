@@ -19,6 +19,13 @@
       <el-col :span="8">
         <el-row type="flex" justify="space-between" align="middle">
           <el-col style="height: 100%">面板</el-col>
+          <el-tooltip content="显示 Token 流" placement="top">
+            <el-button
+              type="text"
+              @click="$router.push({ name: 'Lex', params: { code } })"
+              >Token</el-button
+            >
+          </el-tooltip>
           <el-tooltip content="展开终端" placement="top">
             <el-button
               icon="el-icon-caret-top"

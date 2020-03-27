@@ -32,7 +32,7 @@ a {
   overflow: auto;
 }
 
-.stream .el-button {
+.stream .el-button, .el-input__inner, .el-button {
   font-family: 'Fira Code', Consolas, sans-serif, 'PingFang SC',
     'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial;
 }

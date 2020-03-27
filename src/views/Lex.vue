@@ -26,6 +26,7 @@
 import Editor from '@/components/LazyEditor';
 import LexConfig from '@/components/Lex/Config.vue';
 import LexStream from '@/components/Lex/Stream.vue';
+import { XLangLexer } from '../xlang';
 
 export default {
   name: 'Lex',
@@ -47,6 +48,17 @@ export default {
   },
   mounted() {
     this.mounted = true;
+  },
+  beforeRouteEnter(to, from, next) {
+    const code = to.params.code;
+    if (code !== undefined) {
+      next(vm => {
+        vm.code = code;
+        vm.tokens = XLangLexer.run(code);
+      });
+    } else {
+      next();
+    }
   }
 };
 </script>
