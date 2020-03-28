@@ -4,8 +4,8 @@
       class="d-flex align-center justify-space-between"
       style="height: 40px; line-height: 40px; width: 100%; margin: 0; border-bottom: 1px solid rgb(235, 238, 245);"
     >
-      <span>配置</span>
-      <el-tooltip content="导入 XLang 词法配置" placement="top">
+      <span>词法</span>
+      <el-tooltip content="导入 XLang 的词法配置" placement="top">
         <el-button
           type="success"
           style="padding: 7px; font-size: 22px;"

@@ -19,7 +19,8 @@ import {
   TabPane,
   Tooltip,
   Loading,
-  Popover
+  Popover,
+  Switch
 } from 'element-ui';
 
 Vue.use(Backtop);
@@ -40,5 +41,6 @@ Vue.use(Tooltip);
 Vue.use(Collapse);
 Vue.use(CollapseItem);
 Vue.use(Popover);
+Vue.use(Switch);
 
 Vue.use(Loading.directive);

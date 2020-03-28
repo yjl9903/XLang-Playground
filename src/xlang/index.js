@@ -1,7 +1,7 @@
-import { XLang, LexConfig, XLangLexer } from '@yjl9903/xlang';
+import { XLang, LexConfig, XLangLexer, XLangParser } from '@yjl9903/xlang';
 import store from '../store';
 
-export { LexConfig, XLangLexer };
+export { LexConfig, XLangLexer, XLangParser };
 
 let runtime = undefined;
 
@@ -17,6 +17,16 @@ function initRuntime() {
       });
       res();
     });
+  }
+}
+
+export async function compile(text) {
+  await initRuntime();
+  try {
+    const out = runtime.compile(text);
+    return out.ok;
+  } catch (err) {
+    return false;
   }
 }
 
