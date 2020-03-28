@@ -115,6 +115,43 @@
 import Editor from '@/components/LazyEditor';
 import LexConfig from '@/components/Lex/Config.vue';
 import { compile } from '../xlang';
+import { LRParser } from '@yjl9903/xparse';
+
+function parseConfig(start, prodsText) {
+  start = start.trim();
+  prodsText = prodsText.filter(s => s.trim().length > 0);
+  const types = new Set();
+  const allS = [];
+  const productions = prodsText.map(text => {
+    const lr = text.split('->');
+    if (lr.length != 2) {
+      throw new Error('miss "->"');
+    }
+    const lhs = lr[0].trim();
+    const rhs = lr[1]
+      .trim()
+      .split(' ')
+      .filter(s => s.trim().length > 0);
+    types.add(lhs);
+    for (const item of rhs) {
+      allS.push(item);
+    }
+    return {
+      left: lhs,
+      right: [
+        {
+          rule: rhs
+        }
+      ]
+    };
+  });
+  return {
+    tokens: allS.filter(s => !types.has(s)),
+    types: [...types],
+    start,
+    productions
+  };
+}
 
 export default {
   name: 'Syntax',
@@ -144,12 +181,24 @@ export default {
       if (this.isXLang) {
         this.resFlag = await compile(this.code);
       } else {
-        // const code = this.code;
-        // const lexer = this.isLex ? this.$refs.config.getLexer() : function* () {
-        //   for (const c of code) {
-        //     yield { type: c, value: c };
-        //   }
-        // };
+        const tokenStream = function*() {
+          if (this.isLex) {
+            yield* this.$refs.config.getLexer().run(this.code);
+          } else {
+            for (const c of this.code) {
+              yield { type: c, value: c };
+            }
+          }
+        }.bind(this);
+        try {
+          const config = parseConfig(this.start, this.prods);
+          const parser = new LRParser(config);
+          const res = parser.parse(tokenStream());
+          this.resFlag = res.ok;
+        } catch (err) {
+          console.error(err);
+          this.resFlag = false;
+        }
       }
     }
   },
