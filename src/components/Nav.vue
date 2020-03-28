@@ -16,6 +16,11 @@
     <el-menu-item index="/playground">游乐场</el-menu-item>
     <el-menu-item index="/lex">词法分析</el-menu-item>
     <el-menu-item index="/syntax">语法分析</el-menu-item>
+    <el-menu-item v-if="$route.path !== '/'"
+      ><a href="https://xlang-docs.netlify.com" style="position: absoulte;"
+        >文档</a
+      ></el-menu-item
+    >
   </el-menu>
 </template>
 
