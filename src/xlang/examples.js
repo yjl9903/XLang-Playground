@@ -18,7 +18,7 @@ const Examples = [
 }
 
 fn main(a: number) {
-  println(cal(a) + "");
+  println(Number::to_string(cal(a)));
 }`
   },
   {
@@ -32,7 +32,7 @@ fn main(a: number) {
 }
 
 fn main(a: number) {
-  println(fib(a) + "");
+  println(Number::to_string(fib(a)));
 }`
   },
   {
