@@ -1315,10 +1315,10 @@
   dependencies:
     random-js "^2.1.0"
 
-"@yjl9903/xlang@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@yjl9903/xlang/-/xlang-1.0.2.tgz#1869909d0fa5f689d108fa12d73673c604fabf69"
-  integrity sha512-s0Vu/QYB+dyqtqTgiE6VSCp6Fq7e6PTpl5tTVhtp4p7IbBAt7l7YZI3qClgZ2a6/T8Sli9NminLt51hzSZBHWA==
+"@yjl9903/xlang@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@yjl9903/xlang/-/xlang-1.0.4.tgz#1cb196c93dcae024515213cf51cddba215cac8e1"
+  integrity sha512-YjjE+LOHsPueqfr64Wl5ckPdaWmUq1wgGVTPmdt1nV3w2JO5UyT+D5gYlW3PZVGWBcwh3Yr61fVsHSmDaoLwSA==
   dependencies:
     "@yjl9903/xparse" "^1.1.0"
     cac "^6.5.7"
