@@ -1308,28 +1308,28 @@
   resolved "https://registry.npm.taobao.org/@xtuc/long/download/@xtuc/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha1-0pHGpOl5ibXGHZrPOWrk/hM6cY0=
 
-"@yjl9903/setmap@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@yjl9903/setmap/-/setmap-1.0.5.tgz#556c489d8178f040f9aba419e0c11f8aa77b356b"
-  integrity sha512-a6xssLNFUUrp5i+fKVYumCskvG/h3hxD0TmbOjZ3a6Bv8XRvARza26Pc9eXYGzsDpWW3cYBLDPT2PZE5AkOFEg==
+"@yjl9903/setmap@^1.0.6":
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/@yjl9903/setmap/-/setmap-1.0.6.tgz#fc30186e37b7ca735f9787330433bfb01f2dc51f"
+  integrity sha512-HZehrh8cwTuJUlt7Rd4ay1dhTNir4YQlzVg35q8quoewszVxpTwmddkfsvN6tRbY+rBVl4MJNFLJ8E/7pl2KgQ==
   dependencies:
     random-js "^2.1.0"
 
-"@yjl9903/xlang@^1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@yjl9903/xlang/-/xlang-1.0.4.tgz#1cb196c93dcae024515213cf51cddba215cac8e1"
-  integrity sha512-YjjE+LOHsPueqfr64Wl5ckPdaWmUq1wgGVTPmdt1nV3w2JO5UyT+D5gYlW3PZVGWBcwh3Yr61fVsHSmDaoLwSA==
+"@yjl9903/xlang@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@yjl9903/xlang/-/xlang-1.0.5.tgz#999eaa02b42cd4088e845dc46fb6f74871c9eca5"
+  integrity sha512-qUEEooMcgPPEPYqw7VI+ajeqRv9dPMGjxuxzXWDEn7IKk2YtEy3N1Q3ycZi+nY1g44wnwfgSmm73fXGCzkd63Q==
   dependencies:
-    "@yjl9903/xparse" "^1.1.0"
+    "@yjl9903/xparse" "^1.1.1"
     cac "^6.5.7"
-    xlex "^1.4.0"
+    xlex "^1.4.1"
 
-"@yjl9903/xparse@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@yjl9903/xparse/-/xparse-1.1.0.tgz#85af9f101964ee6b7dde736b26f99321cce651ce"
-  integrity sha512-FD652RdRjutIrSWUglgJo/oRBlBVbL629p8puCBNY+VL6ektEwLxaJh41DXuKytfecEEG0tqjELlGtMf2WVTyw==
+"@yjl9903/xparse@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@yjl9903/xparse/-/xparse-1.1.1.tgz#d3d8967b19f38e0d18de47510def8f51aa8f7c6c"
+  integrity sha512-StGZZiwaKFPiFvKZlThJA5Jx2k9EcCfGlHuOJFRVINb4wsOAcBInZikUiQGiOptesoWBq4ggFurnzuAus0zlcQ==
   dependencies:
-    "@yjl9903/setmap" "^1.0.5"
+    "@yjl9903/setmap" "^1.0.6"
     cac "^6.5.6"
     xlex "^1.4.0"
 
@@ -8701,6 +8701,15 @@ xlex@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/xlex/-/xlex-1.4.0.tgz#4903afa00d207e6a2243a0c007a236995d5ec575"
   integrity sha512-vnCkQFAGZN7JJxpF28EXJNlFX3mDcmN1l0Od/LEfFhQ8p2vYGSY0cqXS8a6YPhbBmQa8TUtMUA1tQ4Z+b8SZfA==
+  dependencies:
+    cac "^6.5.6"
+    graphviz "^0.0.9"
+    random-js "^2.1.0"
+
+xlex@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/xlex/-/xlex-1.4.1.tgz#b6695359bcd729993f39f66885bdc9e23f210e4b"
+  integrity sha512-GtCWXFJBrfMHzxcnaXYPcDN4f3Ndbs+jORb+F2FZAyziWApw9mNnG4B8i0Kl6qaUextxbTZmhCKZcZek0Gik4w==
   dependencies:
     cac "^6.5.6"
     graphviz "^0.0.9"
